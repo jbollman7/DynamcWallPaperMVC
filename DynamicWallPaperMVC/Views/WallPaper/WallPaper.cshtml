@@ -1,7 +1,25 @@
-﻿
+﻿@using System.Collections
+
 @{
     ViewData["Title"] = "Wallpapers shown here";
+
 }
 <h1>@ViewData["Title"]</h1>
+<h2>@ViewData[""]</h2>
 
-<p>Use this page to detail your site's privacy policy.</p>
+<table>
+    <tr>
+        <td>@ViewData["data"]</td>
+    </tr>
+    
+</table>
+
+<ul>
+
+    @foreach (var data in (IEnumerable) ViewData["images"])
+    {
+        <li>
+            @data;
+        </li>
+    }
+</ul>
