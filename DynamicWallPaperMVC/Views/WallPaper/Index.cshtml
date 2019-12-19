@@ -2,7 +2,7 @@
     ViewData["Title"] = "Wallpapers shown here";
 }
 <h1>@ViewData["Title"]</h1>
-@using DynamicWallPaperMVC.Models
+
 @model IEnumerable<DynamicWallPaperMVC.Models.DatumList>
 <p>Wallpaper default page here. yo.</p>
 
@@ -22,13 +22,13 @@
     
 </table>
 
-<ul>
+
    
     
  @foreach (Datum datum in (IEnumerable) ViewData["images"])
  {
-     <img src="@datum.link">
-          
-
-    }
-</ul>
+     <ul>
+         <li>Title: @datum.title</li>
+         <li><img src="@datum.link" height="320" width="160"></li>
+     </ul>
+ }
