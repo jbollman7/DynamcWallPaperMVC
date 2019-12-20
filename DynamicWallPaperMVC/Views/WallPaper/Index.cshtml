@@ -1,34 +1,28 @@
-﻿@{
-    ViewData["Title"] = "Wallpapers shown here";
-}
-<h1>@ViewData["Title"]</h1>
+﻿<html>
+    <head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" type="text/css" href="css/image-style.css">
+    </head>
+        <body>
+            @{
+                ViewData["Title"] = "Wallpapers shown here";
+            }
+            <h1>@ViewData["Title"]</h1>
 
-@model IEnumerable<DynamicWallPaperMVC.Models.DatumList>
-<p>Wallpaper default page here. yo.</p>
+            @model IEnumerable<DynamicWallPaperMVC.Models.DatumList>
+            <p>Wallpaper default page here. yo.</p>
 
-@using System.Collections
+            @using System.Collections
 
-@{
-    ViewData["Title"] = "Wallpapers shown here";
+             <div class="picture-grid">
 
-}
-<h1>@ViewData["Title"]</h1>
-<h2>@ViewData[""]</h2>
-
-<table>
-    <tr>
-        <td>@ViewData["data"]</td>
-    </tr>
-    
-</table>
-
-
-   
-    
- @foreach (Datum datum in (IEnumerable) ViewData["images"])
- {
-     <ul>
-         <li>Title: @datum.title</li>
-         <li><img src="@datum.link" height="320" width="160"></li>
-     </ul>
- }
+            @foreach (Datum datum in (IEnumerable) ViewData["images"])
+            {
+               
+                    <div class="grid-box"><img src="@datum.link"/></div>
+                    
+               
+            }
+              </div>
+        </body>
+</html>
