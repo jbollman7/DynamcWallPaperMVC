@@ -18,10 +18,10 @@
 
             @foreach (Datum datum in (IEnumerable) ViewData["images"])
             {
-               
-                    <div class="grid-box"><img src="@datum.link"/></div>
-                    
-               
+                <div class="grid-box">
+                    <img src="@datum.link" title="@datum.title"/>
+                </div>
+
             }
               </div>
         </body>

@@ -1,0 +1,28 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" type="text/css" href="css/image-style.css">
+    </head>
+        <body>
+            @{
+                ViewData["Title"] = "Wallpapers shown here";
+            }
+            <h1>@ViewData["Title"]</h1>
+
+            @model IEnumerable<DynamicWallPaperMVC.Models.DatumList>
+            <p>Wallpaper default page here. yo.</p>
+
+            @using System.Collections
+
+             <div class="picture-grid">
+
+            @foreach (Datum datum in (IEnumerable) ViewData["images"])
+            {
+                <div class="grid-box">
+                    <img src="@datum.link" title="@datum.title"/>
+                </div>
+
+            }
+              </div>
+        </body>
+</html>

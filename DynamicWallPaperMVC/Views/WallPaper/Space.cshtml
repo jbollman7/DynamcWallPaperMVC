@@ -1,0 +1,43 @@
+﻿<html>
+    <head>
+        <meta charset="UTF-8">
+        
+        <style type="text/css">
+
+            .picture-grid {
+                display: grid;
+                grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+                justify-items: center;
+                grid-gap: 5px;
+                grid-row-gap: 0px;
+            }
+
+            .grid-box img {
+                width: 100%;
+            }
+        </style>
+    </head>
+    <body>
+        
+        @{
+            ViewData["Title"] = "Wallpapers shown here";
+        }
+        <h1>@ViewData["Title"]</h1>
+
+        @model IEnumerable<DynamicWallPaperMVC.Models.DatumList>
+        <p>Wallpaper default page here. yo.</p>
+
+        @using System.Collections
+
+        <div class="picture-grid">
+
+            @foreach (Datum datum in (IEnumerable)ViewData["images"])
+            {
+                <div class="grid-box">
+                    <img src="@datum.link" title="@datum.title" />
+                </div>
+
+            }
+        </div>
+    </body>
+</html>
